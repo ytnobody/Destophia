@@ -2,7 +2,7 @@ use inc::Module::Install;
 name 'Destophia';
 all_from 'lib/Destophia.pm';
 
-# requires '';
+requires 'Context::Micro';
 
 tests 't/*.t';
 author_tests 'xt';
