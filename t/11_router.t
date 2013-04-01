@@ -11,11 +11,11 @@ my $r = Destophia::Router->new(
 );
 
 isa_ok $r, 'Destophia::Router';
-is_deeply $r->match('/'), +{ matched => 'Root::index', capture => [ 1 ] };
-is_deeply $r->match('/12345'), +{ matched => 'Number::index', capture => [ 12345 ] };
-is_deeply $r->match('/user/ytnobody1234'), +{ matched => 'User::index', capture => [ 'ytnobody1234' ] };
-is_deeply $r->match('/geo/100/200'), +{ matched => 'Geo::index', capture => [ 100, 200 ] };
-is_deeply $r->match('/fjkafjgsdk'), +{ matched => 'Root::index', capture => [ 1 ] };
+is_deeply $r->match('/'), +{ class => 'Root', method =>'index', capture => [ 1 ] };
+is_deeply $r->match('/12345'), +{ class => 'Number', method => 'index', capture => [ 12345 ] };
+is_deeply $r->match('/user/ytnobody1234'), +{ class => 'User', method => 'index', capture => [ 'ytnobody1234' ] };
+is_deeply $r->match('/geo/100/200'), +{ class => 'Geo', method => 'index', capture => [ 100, 200 ] };
+is_deeply $r->match('/fjkafjgsdk'), +{ class => 'Root', method => 'index', capture => [ 1 ] };
 is_deeply $r->match('geo/100/200'), undef;
 
 done_testing;
