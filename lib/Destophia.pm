@@ -67,7 +67,7 @@ In your API Root Class ...
   } );
 
   ### Specify path-routing
-  $c->route(
+  $c->router(
       qr'^/register$'   => 'MyApp::regiter';
       qr'^/user/(\d+)$' => 'MyApp::user',
       qr'^/$'           => 'MyApp::index',
