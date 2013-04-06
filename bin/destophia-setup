@@ -1,0 +1,14 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+use Destophia::Setup;
+
+unless ( @ARGV ) {
+    print <<EOF;
+usage:
+  $0 [Dist::Name] [Author]
+EOF
+    exit;
+}
+
+Destophia::Setup->setup( @ARGV );

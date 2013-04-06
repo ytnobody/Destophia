@@ -3,7 +3,7 @@ use strict;
 use warnings;
 our $VERSION = '0.01';
 
-use JSON::XS;
+use JSON 2;
 use Destophia::Router;
 use Context::Micro;
 use Plack::Request;
@@ -110,6 +110,7 @@ In your API Root Class ...
 And, your app.psgi ...
 
   use MyApp;
+  MyApp->bootstrap;
   MyApp->app;
 
 Finally, you can plackup it.
