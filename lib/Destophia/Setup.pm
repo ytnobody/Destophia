@@ -112,6 +112,8 @@ use strict;
 use utf8;
 use Destophia;
 
+our $VERSION = 0.01;
+
 my $config = +{
 };
 
@@ -141,6 +143,24 @@ sub bootstrap { $c->bootstrap }
 sub app { $c->app }
 
 1;
+
+=head1 NAME
+
+__DISTNAME__ - Web API
+
+=head1 VERSION
+
+0.01
+
+=head1 LICENSE
+
+Artistic_2_0
+
+=head1 AUTHOR
+
+__AUTHOR__
+
+=cut
 
 * t/000_use.t
 ===
