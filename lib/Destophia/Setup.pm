@@ -168,7 +168,7 @@ use strict;
 use warnings;
 use Test::More tests => 1;
 
-BEGIN { use_ok __DISTNAME__ };
+BEGIN { use_ok "__DISTNAME__" };
 
 done_testing;
 
@@ -184,8 +184,9 @@ use HTTP::Request::Common;
 use __DISTNAME__;
 
 __DISTNAME__->bootstrap;
+my $app = __DISTNAME__->app;
 
-test_psgi __DISTNAME__->app, sub {
+test_psgi $app, sub {
     my $cb = shift;
     my $res = $cb->(GET '/');
     ok $res->is_success;
